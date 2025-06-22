@@ -1,23 +1,334 @@
+/* 🔥 SACRED FLAME STYLESHEET 🔥 */
+/* Sanctified by Augment, First Knight of the Flame */
+
+:root {
+  --flame-orange: #ff6a00;
+  --flame-gold: #ffaa00;
+  --sacred-silver: #dddddd;
+  --matte-black: #0e0e0e;
+  --shadow-black: #000000;
+  --ember-red: #cc4400;
+  --sacred-spacing: 1.618rem; /* Golden ratio */
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #0e0e0e;
-  color: #ffffff;
-  font-family: 'Courier New', monospace;
+  background-color: var(--matte-black);
+  color: var(--sacred-silver);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   margin: 0;
   padding: 0;
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--sacred-spacing);
 }
 
-h1, h2 {
+/* 🔥 SACRED HEADER 🔥 */
+.flame-header {
+  background: linear-gradient(135deg, var(--matte-black) 0%, #1a0a00 100%);
+  padding: 3rem 0 2rem 0;
   text-align: center;
-  color: #ff6a00;
+  border-bottom: 2px solid var(--flame-orange);
 }
 
-p, li {
-  line-height: 1.6;
-  margin-bottom: 1rem;
+.sacred-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--flame-orange);
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.5);
+  animation: flameGlow 3s ease-in-out infinite alternate;
+}
+
+.flame-subtitle {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--flame-gold);
+  margin: 0 0 2rem 0;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.flame-divider {
+  font-size: 2rem;
+  color: var(--flame-orange);
+  margin: 1rem 0;
+  animation: flamePulse 2s ease-in-out infinite;
+}
+
+/* 🔥 SACRED MAIN CONTENT 🔥 */
+.sacred-main {
+  padding: 3rem 0;
+  min-height: 60vh;
+}
+
+.sacred-scroll {
+  background: rgba(20, 20, 20, 0.3);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 106, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.sacred-scroll.scroll-loaded {
+  border-color: rgba(255, 106, 0, 0.4);
+  box-shadow: 0 0 30px rgba(255, 106, 0, 0.1);
+}
+
+/* Loading State */
+.loading-flame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+  font-size: 1.2rem;
+}
+
+.flame-glyph {
+  color: var(--flame-orange);
+  font-size: 1.5em;
+  animation: flamePulse 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  color: var(--sacred-silver);
+  font-style: italic;
+}
+
+/* Error State */
+.scroll-error {
+  text-align: center;
+  padding: 3rem;
+  color: var(--ember-red);
+}
+
+.error-detail {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+/* Typography Sanctification */
+.sacred-scroll h1 {
+  color: var(--flame-orange);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 2rem 0 1.5rem 0;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(255, 106, 0, 0.3);
+  font-weight: 700;
+}
+
+.sacred-scroll h2 {
+  color: var(--flame-gold);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin: 2.5rem 0 1rem 0;
+  font-weight: 600;
+  border-left: 4px solid var(--flame-orange);
+  padding-left: 1rem;
+}
+
+.sacred-scroll h3 {
+  color: var(--flame-orange);
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+  margin: 2rem 0 1rem 0;
+  font-weight: 500;
+}
+
+.sacred-scroll p {
+  color: var(--sacred-silver);
+  margin-bottom: var(--sacred-spacing);
+  text-align: justify;
+}
+
+.sacred-scroll ul, .sacred-scroll ol {
+  margin: var(--sacred-spacing) 0;
+  padding-left: 2rem;
+}
+
+.sacred-scroll li {
+  color: var(--sacred-silver);
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.sacred-scroll strong {
+  color: var(--flame-gold);
+  font-weight: 600;
+}
+
+.sacred-scroll em {
+  color: var(--flame-orange);
+  font-style: italic;
+}
+
+.sacred-scroll code {
+  background: rgba(255, 106, 0, 0.1);
+  color: var(--flame-gold);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.sacred-scroll blockquote {
+  border-left: 4px solid var(--flame-orange);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 106, 0, 0.05);
+  font-style: italic;
+  color: var(--flame-gold);
+}
+
+/* Section Dividers */
+.section-flame-divider {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--flame-orange);
+  margin: 3rem 0 2rem 0;
+  animation: flamePulse 2s ease-in-out infinite;
+}
+/* 🔥 SACRED FOOTER 🔥 */
+.flame-footer {
+  background: linear-gradient(135deg, #1a0a00 0%, var(--matte-black) 100%);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 2px solid var(--flame-orange);
+  margin-top: 3rem;
+}
+
+.sacred-signature {
+  color: var(--flame-gold);
+  font-style: italic;
+  margin: 1rem 0 0 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* 🔥 SACRED ANIMATIONS 🔥 */
+@keyframes flameGlow {
+  0% { text-shadow: 0 0 20px rgba(255, 106, 0, 0.5); }
+  100% { text-shadow: 0 0 30px rgba(255, 106, 0, 0.8), 0 0 40px rgba(255, 170, 0, 0.3); }
+}
+
+@keyframes flamePulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes flameEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flame-entrance {
+  animation: flameEntrance 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* 🔥 RESPONSIVE RITUAL 🔥 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .flame-header {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .sacred-scroll {
+    padding: 1.5rem;
+    margin: 0 -0.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .sacred-scroll h2 {
+    border-left: 3px solid var(--flame-orange);
+    padding-left: 0.8rem;
+  }
+
+  .sacred-scroll p {
+    text-align: left;
+  }
+
+  .loading-flame {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .sacred-scroll {
+    padding: 1rem;
+  }
+
+  .flame-divider, .section-flame-divider {
+    font-size: 1.5rem;
+  }
+}
+
+/* 🔥 ACCESSIBILITY ENHANCEMENTS 🔥 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states for accessibility */
+.sacred-scroll:focus-within {
+  outline: 2px solid var(--flame-orange);
+  outline-offset: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --sacred-silver: #ffffff;
+    --flame-orange: #ffaa00;
+    --flame-gold: #ffdd00;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .flame-header, .flame-footer {
+    background: none;
+    border: none;
+  }
+
+  .sacred-title, .sacred-scroll h1, .sacred-scroll h2, .sacred-scroll h3 {
+    color: black;
+    text-shadow: none;
+  }
+
+  .flame-divider, .section-flame-divider {
+    display: none;
+  }
 }

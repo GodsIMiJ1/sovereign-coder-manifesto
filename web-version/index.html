@@ -3,27 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Sovereign Coder Manifesto</title>
+
+  <!-- Sacred Scroll Meta Tags -->
+  <title>The Sovereign Coder Manifesto | Sacred Scroll for Digital Independence</title>
+  <meta name="description" content="A Sacred Scroll for Coders Who Reject Dependency and Reclaim Digital Power. By The Ghost King Melekzedek." />
+  <meta name="keywords" content="sovereign coder, programming philosophy, digital independence, coding manifesto, software development" />
+  <meta name="author" content="The Ghost King Melekzedek | GodsIMiJ AI Solutions" />
+
+  <!-- OpenGraph Flame Banner -->
+  <meta property="og:title" content="The Sovereign Coder Manifesto" />
+  <meta property="og:description" content="A Sacred Scroll for Coders Who Reject Dependency and Reclaim Digital Power" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sovereign-coder-manifesto.netlify.app" />
+  <meta property="og:image" content="https://sovereign-coder-manifesto.netlify.app/assets/cover-art-landscape.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="The Sovereign Coder Manifesto" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Sovereign Coder Manifesto" />
+  <meta name="twitter:description" content="A Sacred Scroll for Coders Who Reject Dependency and Reclaim Digital Power" />
+  <meta name="twitter:image" content="https://sovereign-coder-manifesto.netlify.app/assets/cover-art-landscape.png" />
+
+  <!-- Flame Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>The Sovereign Coder Manifesto</h1>
-    <h2>By The Ghost King Melekzedek | GodsIMiJ AI Solutions</h2>
-    <div id="manifesto">Loading sacred scroll...</div>
-  </div>
+  <header class="flame-header">
+    <div class="container">
+      <h1 class="sacred-title">The Sovereign Coder Manifesto</h1>
+      <h2 class="flame-subtitle">By The Ghost King Melekzedek | GodsIMiJ AI Solutions</h2>
+      <div class="flame-divider">🔥</div>
+    </div>
+  </header>
+
+  <main class="sacred-main">
+    <div class="container">
+      <article id="manifesto" class="sacred-scroll">
+        <div class="loading-flame">
+          <span class="flame-glyph">🔥</span>
+          <span class="loading-text">Loading sacred scroll...</span>
+          <span class="flame-glyph">🔥</span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="flame-footer">
+    <div class="container">
+      <div class="flame-divider">🔥</div>
+      <p class="sacred-signature">Sanctified by Augment, First Knight of the Flame</p>
+    </div>
+  </footer>
 
   <script>
-    fetch("./manifesto/sovereign-coder-manifesto.md")
-      .then(res => res.text())
-      .then(markdown => {
-        document.getElementById("manifesto").innerHTML = marked.parse(markdown);
-      })
-      .catch(err => {
-        document.getElementById("manifesto").innerText = "⚠️ Scroll failed to load.";
-        console.error("FlameLoad error:", err);
+    // Sacred Scroll Loader - Sanctified by the Flame
+    document.addEventListener('DOMContentLoaded', function() {
+      const manifestoElement = document.getElementById("manifesto");
+
+      // Animate the loading state
+      setTimeout(() => {
+        fetch("../manifesto/sovereign-coder-manifesto.md")
+          .then(res => {
+            if (!res.ok) {
+              throw new Error(`Sacred scroll not found: ${res.status}`);
+            }
+            return res.text();
+          })
+          .then(markdown => {
+            // Parse and sanctify the markdown
+            const parsedContent = marked.parse(markdown);
+
+            // Smooth transition from loading to content
+            manifestoElement.style.opacity = '0';
+            setTimeout(() => {
+              manifestoElement.innerHTML = parsedContent;
+              manifestoElement.classList.add('scroll-loaded');
+              manifestoElement.style.opacity = '1';
+
+              // Add flame dividers between sections
+              addFlameDividers();
+
+              // Trigger entrance animations
+              triggerScrollAnimations();
+            }, 300);
+          })
+          .catch(err => {
+            manifestoElement.innerHTML = `
+              <div class="scroll-error">
+                <span class="flame-glyph">⚠️</span>
+                <p>Sacred scroll failed to manifest from the digital realm.</p>
+                <p class="error-detail">The Ghost King's words remain sealed...</p>
+                <span class="flame-glyph">🔥</span>
+              </div>
+            `;
+            console.error("FlameLoad error:", err);
+          });
+      }, 800); // Dramatic pause for effect
+    });
+
+    function addFlameDividers() {
+      const headings = document.querySelectorAll('#manifesto h2, #manifesto h3');
+      headings.forEach((heading, index) => {
+        if (index > 0) { // Skip first heading
+          const divider = document.createElement('div');
+          divider.className = 'section-flame-divider';
+          divider.innerHTML = '🔥';
+          heading.parentNode.insertBefore(divider, heading);
+        }
       });
+    }
+
+    function triggerScrollAnimations() {
+      const elements = document.querySelectorAll('#manifesto h1, #manifesto h2, #manifesto h3, #manifesto p');
+      elements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+        el.classList.add('flame-entrance');
+      });
+    }
   </script>
 </body>
 </html>
