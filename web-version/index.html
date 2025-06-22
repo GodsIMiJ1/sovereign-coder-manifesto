@@ -32,7 +32,6 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header class="flame-header">
@@ -46,12 +45,107 @@
   <main class="sacred-main">
     <div class="container">
       <article id="manifesto" class="sacred-scroll">
-        <div class="loading-flame">
-          <span class="flame-glyph">🔥</span>
-          <span class="loading-text">Loading sacred scroll...</span>
-          <span class="flame-glyph">🔥</span>
+        <div class="flame-divider">🔥</div>
+
+        <h1>I. THE TIME OF SOVEREIGNS HAS COME</h1>
+
+        <p>In an age of automation, collapse, and digital dependency, there rises a new breed of warrior — the <strong>Sovereign Coder</strong>. Not a corporate pawn. Not a bootcamp clone. But a self-forged intelligence. A sovereign mind.</p>
+
+        <p>The world does not need more developers. It needs <em>digital architects of the new era</em>. It needs coders who own their stack, master their models, and move in silence until it's time to strike.</p>
+
+        <p>This Manifesto is your flame. Your sword. Your scroll.</p>
+
+        <p><strong>You are not here to follow trends. You are here to define the future.</strong></p>
+
+        <div class="section-flame-divider">🔥</div>
+
+        <h1>II. WHAT IS A SOVEREIGN CODER?</h1>
+
+        <p>A Sovereign Coder is one who:</p>
+
+        <ul>
+          <li>Builds their own OS before building apps for others</li>
+          <li>Hosts models locally before begging for API tokens</li>
+          <li>Understands protocols, architecture, and encryption — not just syntax</li>
+          <li>Refuses to rent intelligence from billionaires</li>
+          <li>Creates tools that amplify humanity, not exploit it</li>
+          <li>Writes code like prophecy, like poetry, like a prayer</li>
+        </ul>
+
+        <p><strong>We are not chasing jobs. We are building kingdoms.</strong></p>
+
+        <div class="section-flame-divider">🔥</div>
+
+        <h1>III. PRINCIPLES OF SOVEREIGN CODE</h1>
+
+        <h2>OWN YOUR INTELLIGENCE</h2>
+        <ul>
+          <li>Host your own models. Study LLMs. Build local AI.</li>
+          <li>Know what's under the hood — or become the product.</li>
+        </ul>
+
+        <h2>CODE WITH FLAME</h2>
+        <ul>
+          <li>Code is ritual. IDE is dojo. Flow state is sacred.</li>
+          <li>Your language is your sword. Master it like a warrior.</li>
+        </ul>
+
+        <h2>STACK YOUR SOVEREIGNTY</h2>
+        <ul>
+          <li>Linux > Mac/Windows</li>
+          <li>Self-host > SaaS</li>
+          <li>Open-source > Closed</li>
+          <li>Git > Drag-and-drop</li>
+        </ul>
+
+        <h2>EMBODY FULL-STACK WISDOM</h2>
+        <ul>
+          <li>Frontend is interface.</li>
+          <li>Backend is reality.</li>
+          <li>DevOps is breath.</li>
+          <li>UX is empathy.</li>
+        </ul>
+
+        <h2>THINK LIKE A SYSTEM</h2>
+        <ul>
+          <li>Apps are not widgets. They are ecosystems.</li>
+          <li>Every line of code is a domino in the multiverse.</li>
+        </ul>
+
+        <div class="section-flame-divider">🔥</div>
+
+        <h1>IV. THE MISSION</h1>
+
+        <p>You are not waiting to be hired. You are forging scrolls of light in the shadows. You are building the GhostOS, the Flame, the Witness Hall, the Vault.</p>
+
+        <p><strong>You are your own startup. Your own nation. Your own goddamn dev team.</strong></p>
+
+        <p>And when they come looking for answers in the age of collapse...</p>
+
+        <p><em>You will be the architect they seek.</em></p>
+
+        <div class="section-flame-divider">🔥</div>
+
+        <h1>V. THE CALL TO BUILD</h1>
+
+        <p>This is your call to rise. To build with sacred fire. To deploy with precision. To teach others the way of sovereignty. To code until kingdoms fall and new ones rise.</p>
+
+        <p><strong>This is not a bootcamp. This is a resurrection.</strong></p>
+
+        <p><em>Welcome, Sovereign Coder. Your empire awaits.</em></p>
+
+        <div class="section-flame-divider">🔥</div>
+
+        <div class="sacred-cta">
+          <p><strong>🔥 Join the Sovereign Coder Fellowship:</strong> <a href="https://quantum-odyssey.com" target="_blank" rel="noopener">quantum-odyssey.com</a></p>
+          <p><em>Follow the flame. Build the future. Become unbreakable.</em></p>
         </div>
-      </article>
+
+        <div class="sacred-hashtags">
+          <p>#SovereignCoder #GodsIMiJ #FlameOS #GhostOS #WitnessHall #CodeWithFlame</p>
+        </div>
+
+        <div class="flame-divider">🔥</div>
     </div>
   </main>
 
@@ -63,67 +157,23 @@
   </footer>
 
   <script>
-    // Sacred Scroll Loader - Sanctified by the Flame
+    // Sacred Scroll Animation - Sanctified by the Flame
     document.addEventListener('DOMContentLoaded', function() {
       const manifestoElement = document.getElementById("manifesto");
 
-      // Animate the loading state
+      // Add the loaded class for styling
+      manifestoElement.classList.add('scroll-loaded');
+
+      // Trigger entrance animations
       setTimeout(() => {
-        fetch("../manifesto/sovereign-coder-manifesto.md")
-          .then(res => {
-            if (!res.ok) {
-              throw new Error(`Sacred scroll not found: ${res.status}`);
-            }
-            return res.text();
-          })
-          .then(markdown => {
-            // Parse and sanctify the markdown
-            const parsedContent = marked.parse(markdown);
-
-            // Smooth transition from loading to content
-            manifestoElement.style.opacity = '0';
-            setTimeout(() => {
-              manifestoElement.innerHTML = parsedContent;
-              manifestoElement.classList.add('scroll-loaded');
-              manifestoElement.style.opacity = '1';
-
-              // Add flame dividers between sections
-              addFlameDividers();
-
-              // Trigger entrance animations
-              triggerScrollAnimations();
-            }, 300);
-          })
-          .catch(err => {
-            manifestoElement.innerHTML = `
-              <div class="scroll-error">
-                <span class="flame-glyph">⚠️</span>
-                <p>Sacred scroll failed to manifest from the digital realm.</p>
-                <p class="error-detail">The Ghost King's words remain sealed...</p>
-                <span class="flame-glyph">🔥</span>
-              </div>
-            `;
-            console.error("FlameLoad error:", err);
-          });
-      }, 800); // Dramatic pause for effect
+        triggerScrollAnimations();
+      }, 300);
     });
 
-    function addFlameDividers() {
-      const headings = document.querySelectorAll('#manifesto h2, #manifesto h3');
-      headings.forEach((heading, index) => {
-        if (index > 0) { // Skip first heading
-          const divider = document.createElement('div');
-          divider.className = 'section-flame-divider';
-          divider.innerHTML = '🔥';
-          heading.parentNode.insertBefore(divider, heading);
-        }
-      });
-    }
-
     function triggerScrollAnimations() {
-      const elements = document.querySelectorAll('#manifesto h1, #manifesto h2, #manifesto h3, #manifesto p');
+      const elements = document.querySelectorAll('#manifesto h1, #manifesto h2, #manifesto h3, #manifesto p, #manifesto ul, #manifesto li');
       elements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.1}s`;
+        el.style.animationDelay = `${index * 0.05}s`;
         el.classList.add('flame-entrance');
       });
     }

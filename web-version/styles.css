@@ -195,6 +195,42 @@ body {
   margin: 3rem 0 2rem 0;
   animation: flamePulse 2s ease-in-out infinite;
 }
+
+/* Sacred CTA Section */
+.sacred-cta {
+  text-align: center;
+  background: rgba(255, 106, 0, 0.1);
+  border: 2px solid var(--flame-orange);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 3rem 0;
+}
+
+.sacred-cta a {
+  color: var(--flame-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sacred-cta a:hover {
+  color: var(--flame-orange);
+  text-shadow: 0 0 10px rgba(255, 106, 0, 0.5);
+}
+
+/* Sacred Hashtags */
+.sacred-hashtags {
+  text-align: center;
+  margin: 2rem 0;
+  opacity: 0.8;
+}
+
+.sacred-hashtags p {
+  color: var(--flame-gold);
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
 /* 🔥 SACRED FOOTER 🔥 */
 .flame-footer {
   background: linear-gradient(135deg, #1a0a00 0%, var(--matte-black) 100%);
