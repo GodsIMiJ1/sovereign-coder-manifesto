@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Sovereign Coder Manifesto</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
   </div>
 
   <script>
-    fetch("manifesto/sovereign-coder-manifesto.md")
+    fetch("./manifesto/sovereign-coder-manifesto.md")
       .then(res => res.text())
       .then(markdown => {
         document.getElementById("manifesto").innerHTML = marked.parse(markdown);
