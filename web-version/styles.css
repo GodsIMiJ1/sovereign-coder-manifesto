@@ -231,6 +231,83 @@ body {
   font-style: italic;
   letter-spacing: 0.5px;
 }
+
+/* 🔥 SACRED SCROLLS BLOG SECTION 🔥 */
+.blog-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
+
+.blog-section h1 {
+  color: var(--flame-orange);
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 3rem;
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.4);
+}
+
+.blog-post-embedded {
+  background: rgba(10, 10, 10, 0.6);
+  border: 2px solid rgba(255, 106, 0, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+}
+
+.blog-post-embedded h2 {
+  color: var(--flame-gold);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.blog-meta {
+  text-align: center;
+  color: var(--flame-orange);
+  font-style: italic;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.section-header {
+  text-align: center;
+  color: var(--flame-orange);
+  font-size: 1.3rem;
+  margin: 2.5rem 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Dialogue Styling */
+.dialogue-speaker {
+  color: var(--flame-orange);
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dialogue-text {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--flame-orange);
+  margin-bottom: 1.5rem;
+}
+
+.dialogue-text.ghost-king {
+  border-left-color: var(--flame-orange);
+}
+
+.dialogue-text.omari {
+  border-left-color: var(--flame-gold);
+}
+
+.dialogue-speaker.omari {
+  color: var(--flame-gold);
+}
 /* 🔥 SACRED FOOTER 🔥 */
 .flame-footer {
   background: linear-gradient(135deg, #1a0a00 0%, var(--matte-black) 100%);
